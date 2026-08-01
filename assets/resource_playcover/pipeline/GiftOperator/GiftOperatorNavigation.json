@@ -1,0 +1,7 @@
+{
+    // PlayCover 控制器不支持按键操作，跳过此步骤
+    "GiftOperatorShiftToRunMapTracker": {
+        "desc": "按 Shift 恢复跑步模式，等待后再用 MapTracker 寻路",
+        "action": "DoNothing"
+    }
+}
