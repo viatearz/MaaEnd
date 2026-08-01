@@ -98,6 +98,8 @@ func NewControlAdaptor(ctx *maa.Context, ctrl *maa.Controller, w, h int) (Contro
 		return newWlrootsControlAdaptor(ctx, ctrl, w, h), nil
 	case CONTROL_TYPE_ADB:
 		return newADBControlAdaptor(ctx, ctrl, w, h), nil
+	case CONTROL_TYPE_PLAYCOVER:
+		return newPlayCoverControlAdaptor(ctx, ctrl, w, h), nil
 	default:
 		return nil, fmt.Errorf("unsupported control type: %s", controlType)
 	}

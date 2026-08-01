@@ -13,10 +13,11 @@ import (
 /* ******** Controller Type ******** */
 
 const (
-	CONTROL_TYPE_WIN32   = "win32"
-	CONTROL_TYPE_MACOS   = "macos"
-	CONTROL_TYPE_WLROOTS = "wlroots"
-	CONTROL_TYPE_ADB     = "adb"
+	CONTROL_TYPE_WIN32     = "win32"
+	CONTROL_TYPE_MACOS     = "macos"
+	CONTROL_TYPE_WLROOTS   = "wlroots"
+	CONTROL_TYPE_ADB       = "adb"
+	CONTROL_TYPE_PLAYCOVER = "playcover"
 )
 
 type maaControllerInfoDto struct {
@@ -53,6 +54,9 @@ func GetControlType(ctrl *maa.Controller) (string, error) {
 		if strings.Contains(infoStr, CONTROL_TYPE_ADB) {
 			return CONTROL_TYPE_ADB, nil
 		}
+		if strings.Contains(infoStr, CONTROL_TYPE_PLAYCOVER) {
+			return CONTROL_TYPE_PLAYCOVER, nil
+		}
 		return "", fmt.Errorf("failed to parse controller info via JSON: %w, and fallback parsing also failed", err)
 	}
 	if info.Type == "" {
@@ -70,6 +74,9 @@ func GetControlType(ctrl *maa.Controller) (string, error) {
 	}
 	if info.Type == CONTROL_TYPE_ADB {
 		return CONTROL_TYPE_ADB, nil
+	}
+	if info.Type == CONTROL_TYPE_PLAYCOVER {
+		return CONTROL_TYPE_PLAYCOVER, nil
 	}
 	return "", fmt.Errorf("unsupported controller type: %s", info.Type)
 }

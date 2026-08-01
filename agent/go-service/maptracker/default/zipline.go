@@ -217,7 +217,7 @@ func captureMiniMapImage(ctrl *maa.Controller) (*image.RGBA, error) {
 	}
 	ctrlType, _ := control.GetControlType(ctrl)
 	switch ctrlType {
-	case control.CONTROL_TYPE_ADB:
+	case control.CONTROL_TYPE_ADB, control.CONTROL_TYPE_PLAYCOVER:
 		return minicv.ImageScale(minicv.ImageCropSquareByRadius(screen, 136, 131, 50), 0.8), nil
 	default:
 		return minicv.ImageCropSquareByRadius(screen, 108, 111, 40), nil

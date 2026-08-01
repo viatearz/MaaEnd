@@ -294,7 +294,7 @@ func (i *MapTrackerInfer) inferLocation(ctrlType string, screenImg *image.RGBA, 
 	// Crop and scale mini-map area from screen
 	var miniMap *image.RGBA
 	switch ctrlType {
-	case control.CONTROL_TYPE_ADB:
+	case control.CONTROL_TYPE_ADB, control.CONTROL_TYPE_PLAYCOVER:
 		miniMap = minicv.ImageCropSquareByRadius(screenImg, 136, 131, 50)
 		miniMap = minicv.ImageScale(miniMap, 0.8)
 	default: // Win32 and others
@@ -504,7 +504,7 @@ func (i *MapTrackerInfer) inferRotation(ctrlType string, screenImg *image.RGBA, 
 	// Crop pointer area from screen
 	var patch *image.RGBA
 	switch ctrlType {
-	case control.CONTROL_TYPE_ADB:
+	case control.CONTROL_TYPE_ADB, control.CONTROL_TYPE_PLAYCOVER:
 		patch = minicv.ImageCropSquareByRadius(screenImg, 136, 131, 15)
 		patch = minicv.ImageScale(patch, 0.8)
 	default: // Win32 and others
