@@ -86,6 +86,20 @@
             ]
         },
         {
+            "name": "CloudPlayCover",
+            "label": "$controller.CloudPlayCover.label",
+            "description": "$controller.CloudPlayCover.description",
+            "type": "PlayCover",
+            "playcover": {
+                "uuid": "maa.playcover"
+            },
+            "attach_resource_path": [
+                "./resource_adb",
+                "./resource_cloud_adb",
+                "./resource_playcover"
+            ]
+        },
+        {
             "name": "Wlroots",
             "label": "$controller.Wlroots.label",
             "description": "$controller.Wlroots.description",

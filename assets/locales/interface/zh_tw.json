@@ -713,6 +713,8 @@
     "controller.ADB.description": "支援安卓模擬器及實體安卓裝置",
     "controller.CloudADB.label": "雲終末地(ADB)(測試版)",
     "controller.CloudADB.description": "用於雲終末地客戶端，透過安卓 ADB 連線。正在測試中。",
+    "controller.CloudPlayCover.label": "雲終末地(PlayCover)(測試版)",
+    "controller.CloudPlayCover.description": "用於雲終末地客戶端，透過PlayCover連線。正在測試中。",
     "controller.Wlroots.label": "Linux端-Wlroots",
     "controller.Wlroots.description": "適用於基於 wlroots 的 Wayland 合成器（如 Sway）",
     "task.ItemTransfer.label": "🐌庫存轉移",
